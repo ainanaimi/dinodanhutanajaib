@@ -1,0 +1,136 @@
+/* General Reset */
+body, h1, a {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f8ffd7 0%, #a6e4d0 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: bounceIn 1.5s ease;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url('https://cdn-icons-png.flaticon.com/512/616/616430.png') no-repeat center/contain;
+    top: -20px;
+    left: -20px;
+    opacity: 0.5;
+    animation: spin 15s linear infinite;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url('https://cdn-icons-png.flaticon.com/512/616/616490.png') no-repeat center/contain;
+    bottom: -20px;
+    right: -20px;
+    opacity: 0.5;
+    animation: spinReverse 15s linear infinite;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2.5em;
+    color: #5ec2a7;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1.5s ease;
+}
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1em;
+    color: white;
+    background-color: #ffa45b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    animation: pop 1.5s ease infinite alternate;
+}
+
+.button:hover {
+    background-color: #ff8e42;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
